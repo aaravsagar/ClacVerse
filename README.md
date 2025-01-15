@@ -30,33 +30,33 @@ To download and run **CalcVerse**, follow these instructions:
 
 1. **Clone the repository:**
    ```bash
-   git clone https://github.com/yourusername/CalcVerse.git
+   git clone https://github.com/aaravsagar/CalcVerse.git
    cd CalcVerse
 Install dependencies: You need to have Node.js installed on your machine. Once you have Node.js, run the following command:
-bash
-Copy code
+```bash
+
 npm install
+```
 How to Build the App
 To build CalcVerse for your platform, follow these steps:
 
 Install Electron Builder (if not already installed):
-
-bash
-Copy code
+```
 npm install --save-dev electron-builder
+```
 Build the app: Run the following command to build the app for your platform:
-
-bash
-Copy code
+```
 npm run build
+```
 Note: The build process is not fully functional yet, so it's recommended to run the app in development mode for the best experience.
+
 
 How to Run the App in Development Mode
 We recommend running CalcVerse using the following command as the build isn't fully functional yet:
 
-bash
-Copy code
+```
 npm run dev
+```
 This will launch the app and allow you to see any changes in real-time as you modify the source code. Live reloading will be enabled for easy development.
 
 Contributing
@@ -84,7 +84,5 @@ Acknowledgements
 This app is part of GPTPROJECTS, where I explore building apps with the assistance of ChatGPT. Special thanks to ChatGPT for helping guide the development process.
 
 Contact
-If you have any questions, feel free to reach out to me at [your-email@example.com].
+If you have any questions, feel free to reach out to me at [aaravsagar29009@gmail.com].
 
-markdown
-Copy code
