@@ -1,0 +1,60 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+  .light {
+    --background: #ffffff;
+    --foreground: #1a1a1a;
+    --sidebar: #f3f4f6;
+    --sidebar-foreground: #1f2937;
+    --sidebar-hover: #e5e7eb;
+    --sidebar-active: #3b82f6;
+    --sidebar-active-foreground: #ffffff;
+    --border: #e5e7eb;
+  }
+
+  .dark {
+    --background: #1a1a1a;
+    --foreground: #ffffff;
+    --sidebar: #2d2d2d;
+    --sidebar-foreground: #e5e7eb;
+    --sidebar-hover: #404040;
+    --sidebar-active: #3b82f6;
+    --sidebar-active-foreground: #ffffff;
+    --border: #404040;
+  }
+
+  .nord {
+    --background: #2e3440;
+    --foreground: #eceff4;
+    --sidebar: #3b4252;
+    --sidebar-foreground: #eceff4;
+    --sidebar-hover: #434c5e;
+    --sidebar-active: #88c0d0;
+    --sidebar-active-foreground: #2e3440;
+    --border: #434c5e;
+  }
+
+  .dracula {
+    --background: #282a36;
+    --foreground: #f8f8f2;
+    --sidebar: #44475a;
+    --sidebar-foreground: #f8f8f2;
+    --sidebar-hover: #6272a4;
+    --sidebar-active: #ff79c6;
+    --sidebar-active-foreground: #282a36;
+    --border: #44475a;
+  }
+
+  .solarized {
+    --background: #fdf6e3;
+    --foreground: #657b83;
+    --sidebar: #eee8d5;
+    --sidebar-foreground: #657b83;
+    --sidebar-hover: #93a1a1;
+    --sidebar-active: #268bd2;
+    --sidebar-active-foreground: #fdf6e3;
+    --border: #93a1a1;
+  }
+}
