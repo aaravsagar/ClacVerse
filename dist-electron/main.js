@@ -1,55 +1,34 @@
-import { app, BrowserWindow, Menu, ipcMain } from "electron";
-import path from "path";
-import { fileURLToPath } from "url";
-const __dirname = path.dirname(fileURLToPath(import.meta.url));
-let mainWindow = null;
-let hideWhenNotFocused = false;
-function createMainWindow() {
-  mainWindow = new BrowserWindow({
+import { app as n, BrowserWindow as s, Menu as d, ipcMain as r } from "electron";
+import i from "path";
+import { fileURLToPath as c } from "url";
+const t = i.dirname(c(import.meta.url));
+let e = null, o = !1;
+function l() {
+  e = new s({
     width: 800,
     height: 600,
-    resizable: false,
-    fullscreen: false,
-    icon: path.join(__dirname, "../public/icon.png"),
+    resizable: !1,
+    fullscreen: !1,
+    icon: i.join(t, "../public/icon.png"),
     webPreferences: {
-      nodeIntegration: true,
-      contextIsolation: false
+      nodeIntegration: !0,
+      contextIsolation: !1
     }
-  });
-  if (process.env.NODE_ENV === "development") {
-    mainWindow.loadURL("http://localhost:5173");
-  } else {
-    mainWindow.loadFile(path.join(__dirname, "../dist/index.html"));
-  }
-  Menu.setApplicationMenu(null);
-  ipcMain.on("toggle-hide-on-blur", (event, shouldHide) => {
-    hideWhenNotFocused = shouldHide;
-    console.log("Hide on blur setting changed:", hideWhenNotFocused);
-  });
-  mainWindow.on("blur", () => {
-    if (hideWhenNotFocused && mainWindow) {
-      mainWindow.setBounds({ x: -1e4, y: -1e4 });
-    }
-  });
-  mainWindow.on("focus", () => {
-    if (mainWindow) {
-      mainWindow.setBounds({ x: 100, y: 100, width: 800, height: 600 });
-    }
-  });
-  mainWindow.on("closed", () => {
-    mainWindow = null;
+  }), process.env.NODE_ENV === "development" ? e.loadURL("http://localhost:5173") : e.loadFile(i.join(t, "../dist/index.html")), d.setApplicationMenu(null), r.on("toggle-hide-on-blur", (f, a) => {
+    o = a, console.log("Hide on blur setting changed:", o);
+  }), e.on("blur", () => {
+    o && e && e.setBounds({ x: -1e4, y: -1e4 });
+  }), e.on("focus", () => {
+    e && e.setBounds({ x: 100, y: 100, width: 800, height: 600 });
+  }), e.on("closed", () => {
+    e = null;
   });
 }
-app.whenReady().then(() => {
-  createMainWindow();
-  app.on("activate", () => {
-    if (BrowserWindow.getAllWindows().length === 0) {
-      createMainWindow();
-    }
+n.whenReady().then(() => {
+  l(), n.on("activate", () => {
+    s.getAllWindows().length === 0 && l();
   });
 });
-app.on("window-all-closed", () => {
-  if (process.platform !== "darwin") {
-    app.quit();
-  }
+n.on("window-all-closed", () => {
+  process.platform !== "darwin" && n.quit();
 });

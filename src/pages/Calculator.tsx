@@ -1,6 +1,5 @@
 import React, { useState, useEffect, useRef } from 'react';
 import { useThemeStore } from '../stores/themeStore';
-import { cn } from '../lib/utils';
 import { History, X, Trash2 } from 'lucide-react'; // Import icons
 
 const Calculator: React.FC = () => {

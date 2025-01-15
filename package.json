@@ -9,7 +9,10 @@
     "build": "tsc && vite build",
     "preview": "vite preview",
     "electron:dev": "NODE_ENV=development vite dev & electron .",
-    "electron:build": "tsc && vite build && electron-builder"
+    "electron:build": "tsc && vite build && electron-builder",
+    "build:win": "npm run build && electron-builder --win",
+    "build:mac": "npm run build && electron-builder --mac",
+    "build:linux": "npm run build && electron-builder --linux"
   },
   "devDependencies": {
     "typescript": "^5.5.3",
@@ -34,5 +37,29 @@
     "zustand": "^4.5.0",
     "clsx": "^2.1.0",
     "tailwind-merge": "^2.2.1"
+  },
+  "build": {
+    "appId": "com.example.electronapp",
+    "productName": "Electron TypeScript App",
+    "files": [
+      "dist/",
+      "dist-electron/",
+      "node_modules/"
+    ],
+    "directories": {
+      "buildResources": "assets"
+    },
+    "mac": {
+      "target": "dmg",
+      "icon": "assets/icon.icns"
+    },
+    "win": {
+      "target": "nsis",
+      "icon": "assets/icon.ico"
+    },
+    "linux": {
+      "target": "AppImage",
+      "icon": "assets/icons/"
+    }
   }
 }

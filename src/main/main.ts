@@ -29,7 +29,7 @@ function createMainWindow() {
   Menu.setApplicationMenu(null);
 
   // Listen to IPC for the hide-on-blur setting
-  ipcMain.on('toggle-hide-on-blur', (event, shouldHide: boolean) => {
+  ipcMain.on('toggle-hide-on-blur', (_event, shouldHide: boolean) => {
     hideWhenNotFocused = shouldHide;
     console.log('Hide on blur setting changed:', hideWhenNotFocused);
   });
